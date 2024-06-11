@@ -1,8 +1,34 @@
 # Welcome to your Expo app 👋
 
+## How to Contribute
+
+- Make sure to pull the latest changes from `development branch` and update your branch.
+
+- Add and stage your changes using the command:
+
+```bash
+    $ git add .
+```
+
+OR
+
+```bash
+    $ git add <file-name>
+```
+
+- Commit your work by running:
+
+```bash
+    $ npm run commit
+```
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
+
+npm i -g expo-cli
+expo upgrade
+expo start
 
 1. Install dependencies
 
