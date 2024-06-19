@@ -24,4 +24,6 @@ export const Colors = {
   colorDanger: "#E72929",
   colorBg: "#EDF4FD",
   colorWhite: "#fff",
+  colorGreen: "#44D32D",
+  colorDark: "060E1B",
 };

@@ -4,6 +4,7 @@ import { HelloWave } from "@/components/HelloWave";
 // import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import Input from "@/components/Atoms/Form/Input";
 
 export default function HomeScreen() {
   return (
@@ -19,7 +20,7 @@ export default function HomeScreen() {
     <ThemedView>
       <CustomButton
         onPress={() => {
-          alert("I am the first button - enabled");
+          console.log("clicked enabled button");
         }}
         title="Button1"
         style={styles.customButton}
@@ -30,7 +31,7 @@ export default function HomeScreen() {
       />
       <CustomButton
         onPress={() => {
-          alert("I am the Second button - disabled");
+          console.log("clicked disabled button");
         }}
         title="Button2"
         style={styles.customButton}
@@ -39,34 +40,25 @@ export default function HomeScreen() {
         activeOpacity={0.8}
         loading={false}
       />
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit{" "}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{" "}
-          to see changes. Press{" "}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: "cmd + d", android: "cmd + m" })}
-          </ThemedText>{" "}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-
+      <Input
+        label="Name"
+        onChangeText={() => console.log("name input")}
+        placeholder="Enter your name"
+      />
+      <Input
+        iconName="eye"
+        size={25}
+        label="Password"
+        onChangeText={() => console.log("passworf input field")}
+        placeholder="Enter your Password"
+        secureTextEntry={true}
+      />
       {/* </ParallaxScrollView> */}
     </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
@@ -79,13 +71,13 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   customButton: {
-    width: "40%",
+    // width: "40%",
     alignSelf: "center",
-    borderWidth: 1,
-    borderColor: "#1c1c1c",
-    borderRadius: 6,
+    // borderWidth: 1,
+    // borderColor: "#1c1c1c",
+    // borderRadius: 6,
   },
   customButtonText: {
-    fontSize: 20,
+    // fontSize: 20,
   },
 });

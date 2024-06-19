@@ -1,4 +1,5 @@
 import { ViewStyle, TextStyle, TouchableOpacityProps } from "react-native";
+
 export type CustomButtonProps = Omit<
   TouchableOpacityProps,
   "style" | "children"
@@ -11,6 +12,7 @@ export type CustomButtonProps = Omit<
   activeOpacity?: Number;
   loading?: Boolean;
 };
+
 /* 
 export type CustomButtonProps = {
     onPress: () => void;

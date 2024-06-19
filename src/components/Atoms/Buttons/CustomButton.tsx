@@ -6,7 +6,7 @@ import {
   StyleSheet,
   ActivityIndicator,
 } from "react-native";
-import { CustomButtonProps } from "./types";
+import { CustomButtonProps } from "@/types/CustomButton.type";
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   onPress,
@@ -41,28 +41,32 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 
 const styles = StyleSheet.create({
   button: {
+    marginTop: 20,
     backgroundColor: "" + Colors.colorPrimary,
     paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
+    paddingHorizontal: 15,
+    borderRadius: 15,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    width: "90%",
+    borderWidth: 0,
   },
   disabledButton: {
+    marginTop: 20,
     backgroundColor: `${Colors.colorDisable}`,
     paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
+    paddingHorizontal: 15,
+    borderRadius: 15,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    width: "90%",
+    borderWidth: 0,
   },
   buttonText: {
     color: "" + Colors.colorWhite,
-    fontSize: 16,
+    fontSize: 20,
   },
 });
 
