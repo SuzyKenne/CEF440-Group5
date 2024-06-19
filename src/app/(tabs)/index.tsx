@@ -1,12 +1,16 @@
-import { Image, StyleSheet, Platform } from "react-native";
+import { Image, StyleSheet, Platform, Text } from "react-native";
 import CustomButton from "@/components/Atoms/Buttons/CustomButton";
 import { HelloWave } from "@/components/HelloWave";
 // import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import Input from "@/components/Atoms/Form/Input";
+import { useRouter } from "expo-router";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import Welcome from "../screens/Welcome";
 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     // <ParallaxScrollView
     //   headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
@@ -19,10 +23,8 @@ export default function HomeScreen() {
     // >
     <ThemedView>
       <CustomButton
-        onPress={() => {
-          console.log("clicked enabled button");
-        }}
-        title="Button1"
+        onPress={() => router.push("../screens/Welcome")}
+        title="Welcome page"
         style={styles.customButton}
         textStyle={styles.customButtonText}
         disabled={false}
