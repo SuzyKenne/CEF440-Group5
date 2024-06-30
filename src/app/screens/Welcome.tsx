@@ -4,6 +4,11 @@ import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import CustomButton from "@/components/Atoms/Buttons/CustomButton";
 import { useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
+<<<<<<< Updated upstream
+import Input from "@/components/Atoms/Form/Input";
+=======
+>>>>>>> Stashed changes
 
 const Welcome = ({}) => {
   const router = useRouter();
@@ -22,7 +27,18 @@ const Welcome = ({}) => {
           Make easy, fast and accurate class attendance
         </ThemedText>
       </ThemedView>
+<<<<<<< Updated upstream
+      <Input
+        label={"Name"}
+        placeholder={"enter your name"}
+        onChangeText={() => alert("hi")}
+        iconName={"eye"}
+      />
+
       <CustomButton title="Get Started!" onPress={() => router.push("../")} />
+=======
+      <CustomButton title="Get Started!" onPress={() => router.push("../screens/Welcome.tsx")} />
+>>>>>>> Stashed changes
     </ThemedView>
   );
 };
@@ -36,8 +52,8 @@ const styles = StyleSheet.create({
     gap: 50,
   },
   logo: {
-    width: "50%",
-    height: "50%",
+    width: "30%",
+    height: "30%",
     alignSelf: "center",
   },
   titleContainer: {
@@ -47,11 +63,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 70,
     fontWeight: "bold",
+    color: Colors.colorDark,
   },
   subtitle: {
     fontSize: 20,
     textAlign: "center",
     marginTop: 15,
+    color: Colors.colorDark,
   },
 });
 

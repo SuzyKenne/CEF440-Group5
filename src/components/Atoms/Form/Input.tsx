@@ -37,38 +37,39 @@ const Input: React.FC<InputProps> = ({
 
 const styles = StyleSheet.create({
   icon: {
-     position: "absolute",
-     color: "" + Colors.colorSecondary,
-     bottom: 8,
-     left: 15,
-     cursor: "pointer",
-     },
-   container: {
-     flexDirection: "row",
-     justifyContent: "center",
-     },
-   inputWrapper: {
-     marginTop: 20,
-     borderRadius: 15,
-     width: "100%",
-     },
-   label: {
-     fontWeight: "600",
-     fontSize: 16,
-     color: "" + Colors.colorDark,
-     marginBottom: 8,
-     },
-   input: {
-     fontSize: 16,
-     fontWeight: "400",
-     width: "100%",
-     color: "" + Colors.colorPlaceholder,
-     borderWidth: 1,
-     borderColor: "" + Colors.colorPrimary,
-     borderRadius: 15,
-     paddingHorizontal: 15,
-     paddingVertical: 10,
-     },
+    position: "absolute",
+    color: "" + Colors.colorSecondary,
+    bottom: 8,
+    left: 15,
+    cursor: "pointer",
+  },
+  container: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  inputWrapper: {
+    marginTop: 20,
+    borderRadius: 15,
+    width: "100%",
+  },
+  label: {
+    fontWeight: "600",
+    fontSize: 16,
+    color: "" + Colors.colorDark,
+    marginBottom: 8,
+  },
+  input: {
+    paddingLeft: 50,
+    fontSize: 16,
+    fontWeight: "400",
+    width: "100%",
+    color: "" + Colors.colorDark,
+    borderWidth: 1,
+    borderColor: "" + Colors.colorPrimary,
+    borderRadius: 15,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+  },
 });
 
 export default Input;

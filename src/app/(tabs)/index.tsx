@@ -8,6 +8,7 @@ import Input from "@/components/Atoms/Form/Input";
 import { useRouter } from "expo-router";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Welcome from "../screens/Welcome";
+import Card from "@/components/Atoms/Card/CardButton";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -55,12 +56,22 @@ export default function HomeScreen() {
         placeholder="Enter your Password"
         secureTextEntry={true}
       />
+      <ThemedView style={styles.container}>
+        <Card title="Create a session" />
+        <Card title="View Attemdance" />
+      </ThemedView>
       {/* </ParallaxScrollView> */}
     </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    // gap: 10,
+  },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
