@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   input: {
-    paddingLeft: 50,
+   // paddingLeft: 50,
     fontSize: 16,
     fontWeight: "400",
     width: "100%",
-    color: "" + Colors.colorDark,
+    color: "" + Colors.colorPlaceholder,
     borderWidth: 1,
     borderColor: "" + Colors.colorPrimary,
     borderRadius: 15,
