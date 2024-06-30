@@ -4,6 +4,8 @@ import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import CustomButton from "@/components/Atoms/Buttons/CustomButton";
 import { useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
+import Input from "@/components/Atoms/Form/Input";
 
 const Welcome = ({}) => {
   const router = useRouter();
@@ -22,6 +24,13 @@ const Welcome = ({}) => {
           Make easy, fast and accurate class attendance
         </ThemedText>
       </ThemedView>
+      <Input
+        label={"Name"}
+        placeholder={"enter your name"}
+        onChangeText={() => alert("hi")}
+        iconName={"eye"}
+      />
+
       <CustomButton title="Get Started!" onPress={() => router.push("../")} />
     </ThemedView>
   );
@@ -47,11 +56,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 70,
     fontWeight: "bold",
+    color: Colors.colorDark,
   },
   subtitle: {
     fontSize: 20,
     textAlign: "center",
     marginTop: 15,
+    color: Colors.colorDark,
   },
 });
 
