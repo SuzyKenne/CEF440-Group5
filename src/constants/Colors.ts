@@ -25,5 +25,6 @@ export const Colors = {
   colorBg: "#EDF4FD",
   colorWhite: "#fff",
   colorGreen: "#44D32D",
-  colorDark: "060E1B",
+  colorDark: "#060E1B",
+  colorPlaceholder: "#CCCCCC"
 };
