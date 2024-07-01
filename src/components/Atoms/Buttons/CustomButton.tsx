@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 20,
     backgroundColor: "" + Colors.colorPrimary,
-    paddingVertical: 8,
+    paddingVertical: 10,
     borderRadius: 25,
     flexDirection: "row",
     justifyContent: "center",
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   disabledButton: {
     marginTop: 20,
     backgroundColor: `${Colors.colorDisable}`,
-    paddingVertical: 8,
+    paddingVertical: 10,
     borderRadius: 25,
     flexDirection: "row",
     justifyContent: "center",

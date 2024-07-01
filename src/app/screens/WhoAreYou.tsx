@@ -5,25 +5,29 @@ import { ThemedText } from "@/components/ThemedText";
 import CustomButton from "@/components/Atoms/Buttons/CustomButton";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
-import Input from "@/components/Atoms/Form/Input";
 
 const WhoAreYou = ({}) => {
   const router = useRouter();
   return (
     <ThemedView style={styles.container}>
-        
       <Image
-        source={require("../../../assets/images/Fingerprint-pana 1.svg")}
-        style={styles.logo}
+        source={require("../../../assets/images/whoareyou.svg")}
+        style={{ width: 300, height: 300 }}
         resizeMode="contain"
       />
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title" style={styles.title}>
-          Who are you?
+      <ThemedView style={styles.elements}>
+        <ThemedText type="subtitle" style={styles.sub}>
+          Tell us who you are
         </ThemedText>
+        <CustomButton
+          title="Instructor"
+          onPress={() => router.push("./Instructor/LoginInstructor")}
+        />
+        <CustomButton
+          title="Student"
+          onPress={() => router.push("./Student/LoginStudent")}
+        />
       </ThemedView>
-      <CustomButton title="Instructor" onPress={() => router.push("../")} />
-      <CustomButton title="Student" onPress={() => router.push("../")} />
     </ThemedView>
   );
 };
@@ -32,29 +36,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    margin: 20,
-    backgroundColor: "none",
+    alignItems: "center",
   },
-  logo: {
-    width: "50%",
-    height: "50%",
-    alignSelf: "center",
+  elements: {
+    position: "relative",
+    marginTop: 100,
+    width: "90%",
+    alignItems: "center",
   },
-  titleContainer: {
-    backgroundColor: "none",
+  sub: {
+    position: "absolute",
+    top: -30,
+    left: 35,
   },
-  title: {
-    margin: 15,
-    fontSize: 50,
-    fontWeight: "bold",
-    color: Colors.colorPrimary,
-  },
-  paragraph: {
-    fontSize: 15,
-    color: Colors.colorPrimary,
-    marginTop: 10,
-    alignSelf: "flex-end"
-  }
 });
 
 export default WhoAreYou;

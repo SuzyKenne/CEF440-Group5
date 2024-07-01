@@ -4,8 +4,6 @@ import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import CustomButton from "@/components/Atoms/Buttons/CustomButton";
 import { useRouter } from "expo-router";
-import { Colors } from "@/constants/Colors";
-import Input from "@/components/Atoms/Form/Input";
 
 const Welcome = ({}) => {
   const router = useRouter();
@@ -13,7 +11,7 @@ const Welcome = ({}) => {
     <ThemedView style={styles.container}>
       <Image
         source={require("../../../assets/images/logo.png")}
-        style={styles.logo}
+        style={{ width: 300, height: 130 }}
         resizeMode="contain"
       />
       <ThemedView style={styles.titleContainer}>
@@ -27,7 +25,7 @@ const Welcome = ({}) => {
 
       <CustomButton
         title="Get Started!"
-        onPress={() => router.push("../screens/Welcome.tsx")}
+        onPress={() => router.push("./WhoAreYou")}
       />
     </ThemedView>
   );
@@ -38,13 +36,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "none",
+    justifyContent: "space-around",
     gap: 50,
-  },
-  logo: {
-    width: "30%",
-    height: "30%",
-    alignSelf: "center",
   },
   titleContainer: {
     backgroundColor: "none",
@@ -52,14 +45,10 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     fontSize: 70,
-    fontWeight: "bold",
-    color: Colors.colorDark,
   },
   subtitle: {
-    fontSize: 20,
     textAlign: "center",
-    marginTop: 15,
-    color: Colors.colorDark,
+    marginTop: 25,
   },
 });
 

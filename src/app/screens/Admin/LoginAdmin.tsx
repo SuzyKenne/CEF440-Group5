@@ -1,4 +1,4 @@
-import { Image, StyleSheet,TouchableOpacity  } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import React from "react";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
@@ -7,13 +7,12 @@ import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import Input from "@/components/Atoms/Form/Input";
 
-const LoginStudent = ({}) => {
+const LoginAdmin = ({}) => {
   const router = useRouter();
   return (
     <ThemedView style={styles.container}>
-        
       <Image
-        source={require("../../../assets/images/logo.png")}
+        source={require("../../../../assets/images/logo.png")}
         style={styles.logo}
         resizeMode="contain"
       />
@@ -21,15 +20,17 @@ const LoginStudent = ({}) => {
         <ThemedText type="title" style={styles.title}>
           Login
         </ThemedText>
-        <Input label="Matricule:" onChangeText={()=>{}} placeholder="Enter Matricule"/>
+        <Input label="Name:" onChangeText={() => {}} placeholder="Enter Name" />
         <Input
-         label="Password:"
-         onChangeText={()=>{}} placeholder="Enter Password"/>    
+          label="Password:"
+          onChangeText={() => {}}
+          placeholder="Enter Password"
+        />
         <ThemedText type="title" style={styles.paragraph}>
           Forgot Password?
         </ThemedText>
       </ThemedView>
-      <CustomButton title="Login" onPress={() => router.push("../")}/>
+      <CustomButton title="Login" onPress={() => router.push("../")} />
     </ThemedView>
   );
 };
@@ -60,13 +61,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: Colors.colorPrimary,
     marginTop: 10,
-    alignSelf: "flex-end"
+    alignSelf: "flex-end",
   },
-  pheye: {
-    flex: 1,
-    color: "black",
-    padding: 10,
-  }
 });
 
-export default LoginStudent;
+export default LoginAdmin;

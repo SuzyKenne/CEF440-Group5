@@ -1,4 +1,4 @@
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
@@ -7,12 +7,12 @@ import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import Input from "@/components/Atoms/Form/Input";
 
-const LoginAdmin = ({}) => {
+const LoginStudent = ({}) => {
   const router = useRouter();
   return (
     <ThemedView style={styles.container}>
       <Image
-        source={require("../../../assets/images/logo.png")}
+        source={require("../../../../assets/images/logo.png")}
         style={styles.logo}
         resizeMode="contain"
       />
@@ -20,7 +20,11 @@ const LoginAdmin = ({}) => {
         <ThemedText type="title" style={styles.title}>
           Login
         </ThemedText>
-        <Input label="Name:" onChangeText={() => {}} placeholder="Enter Name" />
+        <Input
+          label="Matricule:"
+          onChangeText={() => {}}
+          placeholder="Enter Matricule"
+        />
         <Input
           label="Password:"
           onChangeText={() => {}}
@@ -63,6 +67,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
     alignSelf: "flex-end",
   },
+  pheye: {
+    flex: 1,
+    color: "black",
+    padding: 10,
+  },
 });
 
-export default LoginAdmin;
+export default LoginStudent;

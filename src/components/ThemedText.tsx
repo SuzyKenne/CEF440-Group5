@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 500,
     color: Colors.colorDark,
   },
   link: {
