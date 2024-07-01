@@ -5,10 +5,7 @@ import { ThemedText } from "@/components/ThemedText";
 import CustomButton from "@/components/Atoms/Buttons/CustomButton";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
-<<<<<<< Updated upstream
 import Input from "@/components/Atoms/Form/Input";
-=======
->>>>>>> Stashed changes
 
 const Welcome = ({}) => {
   const router = useRouter();
@@ -27,18 +24,11 @@ const Welcome = ({}) => {
           Make easy, fast and accurate class attendance
         </ThemedText>
       </ThemedView>
-<<<<<<< Updated upstream
-      <Input
-        label={"Name"}
-        placeholder={"enter your name"}
-        onChangeText={() => alert("hi")}
-        iconName={"eye"}
-      />
 
-      <CustomButton title="Get Started!" onPress={() => router.push("../")} />
-=======
-      <CustomButton title="Get Started!" onPress={() => router.push("../screens/Welcome.tsx")} />
->>>>>>> Stashed changes
+      <CustomButton
+        title="Get Started!"
+        onPress={() => router.push("../screens/Welcome.tsx")}
+      />
     </ThemedView>
   );
 };

@@ -28,13 +28,11 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       style={[disabled ? styles.disabledButton : styles.button, style]}
       {...rest}
     >
-      {/* {iconLeft} */}
       {loading ? (
         <ActivityIndicator color="white" />
       ) : (
         <Text style={[styles.buttonText, textStyle]}>{title}</Text>
       )}
-      {/* {iconRight} */}
     </TouchableOpacity>
   );
 };
@@ -43,25 +41,23 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 20,
     backgroundColor: "" + Colors.colorPrimary,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 15,
+    paddingVertical: 8,
+    borderRadius: 25,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    width: "90%",
+    width: "80%",
     borderWidth: 0,
   },
   disabledButton: {
     marginTop: 20,
     backgroundColor: `${Colors.colorDisable}`,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 15,
+    paddingVertical: 8,
+    borderRadius: 25,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    width: "90%",
+    width: "80%",
     borderWidth: 0,
   },
   buttonText: {

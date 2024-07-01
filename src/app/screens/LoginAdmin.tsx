@@ -11,7 +11,6 @@ const LoginAdmin = ({}) => {
   const router = useRouter();
   return (
     <ThemedView style={styles.container}>
-        
       <Image
         source={require("../../../assets/images/logo.png")}
         style={styles.logo}
@@ -21,8 +20,12 @@ const LoginAdmin = ({}) => {
         <ThemedText type="title" style={styles.title}>
           Login
         </ThemedText>
-        <Input label="Name:" onChangeText={()=>{}} placeholder="Enter Name"/>
-        <Input label="Password:" onChangeText={()=>{}} placeholder="Enter Password" />
+        <Input label="Name:" onChangeText={() => {}} placeholder="Enter Name" />
+        <Input
+          label="Password:"
+          onChangeText={() => {}}
+          placeholder="Enter Password"
+        />
         <ThemedText type="title" style={styles.paragraph}>
           Forgot Password?
         </ThemedText>
@@ -58,8 +61,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: Colors.colorPrimary,
     marginTop: 10,
-    alignSelf: "flex-end"
-  }
+    alignSelf: "flex-end",
+  },
 });
 
 export default LoginAdmin;

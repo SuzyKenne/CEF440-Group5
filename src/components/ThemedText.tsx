@@ -1,10 +1,6 @@
 import { Text, type TextProps, StyleSheet } from "react-native";
 import { useThemeColor } from "@/hooks/useThemeColor";
-<<<<<<< Updated upstream
-import { Colors } from "react-native/Libraries/NewAppScreen";
-=======
 import { Colors } from "@/constants/Colors";
->>>>>>> Stashed changes
 
 export type ThemedTextProps = TextProps & {
   lightColor?: string;

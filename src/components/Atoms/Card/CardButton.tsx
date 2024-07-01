@@ -8,7 +8,7 @@ const Card: React.FC<CardProps> = ({ title, image }) => {
   return (
     <ThemedView style={styles.card}>
       <Image
-        source={require("../../../../assets/images/folder.svg")}
+        source={require("../../../../assets/images/attendanceHistorique.png")}
         style={styles.image}
         // resizeMode="contain"
       />

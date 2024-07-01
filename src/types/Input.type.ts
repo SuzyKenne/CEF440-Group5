@@ -6,8 +6,9 @@ export type InputProps = {
   type?: "email-address" | "phone-pad";
   secureTextEntry?: boolean;
   placeholder?: string;
+  value?: string | number;
   onChangeText: (text: string) => void;
-  onPress?: () => void;
+  // onPress?: () => void;
   iconName?: "eye";
   size?: number;
 } & Omit<TextInputProps, "onChangeText">;

@@ -39,18 +39,6 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="SignUp"
-        options={{
-          title: "sign up",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "SignUp" : "SignUp-outline"}
-              color={color}
-            />
-          ),
-        }}
-      />
     </Tabs>
   );
 }

@@ -8,8 +8,9 @@ const Input: React.FC<InputProps> = ({
   type,
   label,
   placeholder,
+  value,
   onChangeText,
-  onPress,
+  // onPress,
   secureTextEntry,
   iconName,
   size,
@@ -24,9 +25,10 @@ const Input: React.FC<InputProps> = ({
           style={styles.input}
           keyboardType={type}
           id={label}
+          value={value}
           placeholder={placeholder}
           onChangeText={onChangeText}
-          onPress={onPress}
+          // onPress={onPress}
           secureTextEntry={secureTextEntry}
           {...rest}
         />
@@ -40,33 +42,39 @@ const styles = StyleSheet.create({
     position: "absolute",
     color: "" + Colors.colorSecondary,
     bottom: 8,
-    left: 15,
+    right: 40,
     cursor: "pointer",
+    zIndex: -1,
   },
   container: {
     flexDirection: "row",
     justifyContent: "center",
   },
   inputWrapper: {
-    marginTop: 20,
-    borderRadius: 15,
-    width: "100%",
+    position: "relative",
+    marginTop: 40,
+    width: "95%",
+    alignItems: "center",
   },
   label: {
+    position: "absolute",
     fontWeight: "600",
     fontSize: 16,
     color: "" + Colors.colorDark,
-    marginBottom: 8,
+    paddingLeft: 0,
+    left: 30,
+    top: -22,
   },
   input: {
-    paddingLeft: 50,
+    paddingRight: 20,
+    paddingLeft: 20,
     fontSize: 16,
     fontWeight: "400",
-    width: "100%",
+    width: "90%",
     color: "" + Colors.colorDark,
     borderWidth: 1,
     borderColor: "" + Colors.colorPrimary,
-    borderRadius: 15,
+    borderRadius: 20,
     paddingHorizontal: 15,
     paddingVertical: 10,
   },
