@@ -20,11 +20,17 @@ const LoginAdmin = ({}) => {
         <ThemedText type="title" style={styles.title}>
           Login
         </ThemedText>
-        <Input label="Name:" onChangeText={() => {}} placeholder="Enter Name" />
+        <Input
+          label="Name:"
+          onChangeText={() => {}}
+          placeholder="Enter Name"
+          value="ABC"
+        />
         <Input
           label="Password:"
           onChangeText={() => {}}
           placeholder="Enter Password"
+          value="ABC"
         />
         <ThemedText type="title" style={styles.paragraph}>
           Forgot Password?

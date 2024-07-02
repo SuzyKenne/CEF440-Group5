@@ -3,11 +3,11 @@ import { TextInputProps } from "react-native";
 
 export type InputProps = {
   label: string;
+  onChangeText: (text: string) => void;
+  value?: string | number;
   type?: "email-address" | "phone-pad";
   secureTextEntry?: boolean;
   placeholder?: string;
-  value?: string | number;
-  onChangeText: (text: string) => void;
   // onPress?: () => void;
   iconName?: "eye";
   size?: number;
