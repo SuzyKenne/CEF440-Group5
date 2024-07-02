@@ -10,7 +10,7 @@ import { useForm, Controller, FieldValues } from "react-hook-form";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
-const CreateAccountStudent = () => {
+const CreateInstructor = () => {
     const router = useRouter();
   
     const {
@@ -39,9 +39,9 @@ const CreateAccountStudent = () => {
       <SafeAreaView style={styles.form}>
       <Controller
               control={control}
-              name="Matricule"
+              name="ID"
               render={({ field: { onChange, value } }) => (
-                  <Input label="ID:" onChangeText={(val) => {onChange(val)}} placeholder="enter your Matricule" value={value}/>
+                  <Input label="ID:" onChangeText={(val) => {onChange(val)}} placeholder="enter your ID" value={value}/>
                 )}
               />
               <Controller
@@ -138,4 +138,4 @@ const styles = StyleSheet.create({
  
 });
 
-export default CreateAccountStudent;
+export default CreateInstructor;

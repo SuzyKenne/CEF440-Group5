@@ -4,7 +4,6 @@ import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import CustomButton from "@/components/Atoms/Buttons/CustomButton";
 import { useRouter } from "expo-router";
-import { Colors } from "@/constants/Colors";
 
 const WhoAreYou = ({}) => {
   const router = useRouter();
@@ -25,7 +24,7 @@ const WhoAreYou = ({}) => {
         />
         <CustomButton
           title="Student"
-          onPress={() => router.push("./Student/LoginStudent")}
+          onPress={() => router.push("./student/LoginStudent")}
         />
       </ThemedView>
     </ThemedView>
