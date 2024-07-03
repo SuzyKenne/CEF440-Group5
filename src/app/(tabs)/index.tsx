@@ -12,6 +12,7 @@ import Card from "@/components/Atoms/Card/CardButton";
 
 export default function HomeScreen() {
   const router = useRouter();
+  const Img = "../../../../assets/images/attendanceHistorique.png";
   return (
     // <ParallaxScrollView
     //   headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
@@ -57,8 +58,8 @@ export default function HomeScreen() {
         secureTextEntry={true}
       />
       <ThemedView style={styles.container}>
-        <Card title="Create a session" />
-        <Card title="View Attemdance" />
+        <Card title="Create a session" image={Img} onPress="/screens/Welcome" />
+        <Card title="View attendance" image={Img} onPress="/screens/Welcome" />
       </ThemedView>
       {/* </ParallaxScrollView> */}
     </ThemedView>

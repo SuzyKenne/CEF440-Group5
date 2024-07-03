@@ -4,42 +4,47 @@ import { Colors } from "@/constants/Colors";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import { CardProps } from "@/types/Card.type";
-const Card: React.FC<CardProps> = ({ title, image }) => {
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { router } from "expo-router";
+// import {Img} from "../../../../assets/images/attendanceHistorique.png";
+const Card: React.FC<CardProps> = ({ title, image, onPress }) => {
   return (
     <ThemedView style={styles.card}>
-      <Image
-        source={require("../../../../assets/images/attendanceHistorique.png")}
-        style={styles.image}
-        // resizeMode="contain"
-      />
-      <ThemedText style={styles.title}>{title}</ThemedText>
+      <TouchableOpacity onPress={() => router.push(`${onPress}`)}>
+        <Image
+          source={{ uri: image }}
+          style={styles.img}
+          resizeMode="contain"
+        />
+        <ThemedText style={styles.title}>{title}</ThemedText>
+      </TouchableOpacity>
     </ThemedView>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
-    alignItems: "center",
-    // position: "absolute",
-    // left: "25%",
     marginTop: 16,
-    width: 150,
+    width: "40%",
+    maxWidth: "50%",
     paddingHorizontal: 1,
-    paddingVertical: 13,
-    borderRadius: 15,
+    paddingVertical: 15,
+    borderRadius: 20,
     backgroundColor: Colors.colorWhite,
     textAlign: "center",
   },
   title: {
     color: Colors.colorDark,
-    fontSize: 17,
-    justifyContent: "center",
-    width: "85%",
+    fontSize: 18,
+    marginTop: 5,
+    width: "95%",
     textAlign: "center",
+    alignSelf: "center",
   },
-  image: {
-    // justifyContent: "center",
-    width: "30%",
+  img: {
+    alignSelf: "center",
+    width: 70,
+    height: 70,
   },
 });
 
