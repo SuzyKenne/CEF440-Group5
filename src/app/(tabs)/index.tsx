@@ -4,11 +4,9 @@ import { HelloWave } from "@/components/HelloWave";
 // import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import Input from "@/components/Atoms/Form/Input";
 import { useRouter } from "expo-router";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import Welcome from "../screens/Welcome";
 import Card from "@/components/Atoms/Card/CardButton";
+import CardGeneral from "@/components/Atoms/Card/CardGeneral";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -44,23 +42,34 @@ export default function HomeScreen() {
         activeOpacity={0.8}
         loading={false}
       />
-      <Input
-        label="Name"
-        onChangeText={() => console.log("name input")}
-        placeholder="Enter your name"
-      />
-      <Input
-        iconName="eye"
-        size={25}
-        label="Password"
-        onChangeText={() => console.log("passworf input field")}
-        placeholder="Enter your Password"
-        secureTextEntry={true}
-      />
       <ThemedView style={styles.container}>
         <Card title="Create a session" image={Img} onPress="/screens/Welcome" />
         <Card title="View attendance" image={Img} onPress="/screens/Welcome" />
       </ThemedView>
+      <CardGeneral
+        content="Please mark your attendance"
+        title="Attendance notification"
+        icon="notifications-sharp"
+      />
+      <CardGeneral
+        content="Total of presence"
+        title="Mathematics"
+        time="10:34 am"
+        letter="M"
+        nberPresence="18/20"
+      />
+      <CardGeneral
+        content="Total of presence"
+        title="Digital Image"
+        time="10:34 am"
+        letter="D"
+        status="present"
+      />
+      <CardGeneral
+        content="Welcome !"
+        title="Hi Aubin SIAHA"
+        icon="person-sharp"
+      />
       {/* </ParallaxScrollView> */}
     </ThemedView>
   );
