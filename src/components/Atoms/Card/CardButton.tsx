@@ -9,15 +9,17 @@ import { router } from "expo-router";
 // import {Img} from "../../../../assets/images/attendanceHistorique.png";
 const Card: React.FC<CardProps> = ({ title, image, onPress }) => {
   return (
-    <ThemedView style={styles.card}>
-      <TouchableOpacity onPress={() => router.push(`${onPress}`)}>
-        <Image
-          source={{ uri: image }}
-          style={styles.img}
-          resizeMode="contain"
-        />
-        <ThemedText style={styles.title}>{title}</ThemedText>
-      </TouchableOpacity>
+    <ThemedView>
+      <ThemedView style={styles.card}>
+        <TouchableOpacity onPress={() => router.push(`${onPress}`)}>
+          <Image
+            source={{ uri: image }}
+            style={styles.img}
+            resizeMode="contain"
+          />
+          <ThemedText style={styles.title}>{title}</ThemedText>
+        </TouchableOpacity>
+      </ThemedView>
     </ThemedView>
   );
 };
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
   },
   img: {
     alignSelf: "center",
-    width: 70,
+    width: 80,
     height: 70,
   },
 });
