@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose');
 
 
-const biometricDataSchema = new Schema ({
+const BiometricDataSchema = new mongoose.Schema ({
     biometricData: {
         type: String,
         required: true,
@@ -12,3 +12,5 @@ const biometricDataSchema = new Schema ({
         required: true
     }
 }, {timestamps: true})
+const BiometricDAtas = mongoose.model("Biometric", BiometricDataSchema);
+module.exports = { BiometricDAtas };

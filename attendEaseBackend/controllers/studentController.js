@@ -119,9 +119,9 @@ async function deleteStudent(req, res, next) {
     return next(
         res.status(200).json({
             status: "OK",
-            message: "Student successfully delleted!"
+            message: "Student successfully deleted!"
         })
     )
 }
 
-module.export= {getAllStudent, deleteStudent, updateStudent, createStudent, getOneStudent};
+module.exports = { getAllStudent, deleteStudent, updateStudent, createStudent, getOneStudent};

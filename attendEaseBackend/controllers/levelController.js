@@ -1,14 +1,14 @@
 const mongoose = require ('mongoose')
-const Instructors = require ("../models/instructorModels")
+const Levels = require ("../models/levelModels")
 
 
-//functions to get all instructors in the database
-async function getAllInstructors(req, res, next){
+//functions to get all the levels in the database
+async function getAllLevels(req, res, next){
     try {
-        const instructors = await Instructors.find({})
+        const levels = await Levels.find({})
 
         return next(
-            res.status(200).json(instructors)
+            res.status(200).json(levels)
             
         )
     } catch (error) {
@@ -21,8 +21,8 @@ async function getAllInstructors(req, res, next){
 }
 
 
-//function to get one instructor
-async function getOneInstructor(req, res, next){
+//function to get one level
+async function getOneLevel(req, res, next){
     const {id} = req.params ;
 
     if( !mongoose.Types.ObjectId.isValid(id)){
@@ -33,33 +33,33 @@ async function getOneInstructor(req, res, next){
         ) 
     }
 
-    const instructor = await Instructors.findById({_id : id })
+    const level = await Levels.findById({_id : id })
 
-    if(!instructor){
+    if(!level){
         return next(
             res.status(404).json({
-                message: "Instructor  Not Found"
+                message: "Level  Not Found"
             })
         )
     }
 
     return next(
-        res.status(200).json (instructor)
+        res.status(200).json (level)
     )
 }
 
 
-//function to create an instructor
-async function createInstructor(req, res, next){
-    const instructorData= req.body;
+//function to create a level
+async function createLevel(req, res, next){
+    const levelData= req.body;
 
     try {
-        const newInstructor = await Instructors.create(instructorData);
+        const newLevel = await Levels.create(levelData);
 
         return next(
             res.status(200).json({
                 Status :"OK",
-                message : "Instructor succefully added!"
+                message : "Level succefully added!"
             })
         
         )
@@ -74,8 +74,8 @@ async function createInstructor(req, res, next){
 }
 
 
-//function to update  an instructor
-async  function updateInstructor(req, res,next){
+//function to update  a level
+async  function updateLevel(req, res,next){
     const {id} = req.params ;
 
     const update = req.body
@@ -88,24 +88,24 @@ async  function updateInstructor(req, res,next){
         ) 
     }
 
-    const instructor = await Instructors.findByIdAndUpdate({_id: id}, {
+    const level = await Levels.findByIdAndUpdate({_id: id}, {
         ...req.body, update
     })
-    if(!instructor){
+    if(!level){
         return next(
             res.status(404).json({
-                message: "Instructor Not Found"
+                message: "level Not Found"
             })
         )
     }
 
     return next(
-        res.status(200).json(instructor)
+        res.status(200).json(level)
     )
 }  
 
-//function to delete an instructor from database
-async function deleteInstructor(req, res, next){
+//function to delete a level from database
+async function deleteLevel(req, res, next){
     const {id} = req.params ;
 
     if( !mongoose.Types.ObjectId.isValid(id)){
@@ -116,12 +116,12 @@ async function deleteInstructor(req, res, next){
         ) 
     }
 
-    const instructor = await Instructors.findByIdAndDelete({_id: id })
+    const level = await Levels.findByIdAndDelete({_id: id })
 
-if(!instructor){
+if(!level){
         return next(
             res.status(404).json({
-                message: "Instructor Not Found"
+                message: "Level Not Found"
             })
         )
     }
@@ -129,11 +129,11 @@ if(!instructor){
     return next(
         res.status(200).json({
             Status :"OK",
-            message : "Instructor succefully deleted!"
+            message : "Level  succefully deleted!"
         })
        
     )
 }
 
 
-module.exports = { getAllInstructors, getOneInstructor, createInstructor, updateInstructor, deleteInstructor}
+module.exports = { getAllLevels, getOneLevel, createLevel, updateLevel, deleteLevel}

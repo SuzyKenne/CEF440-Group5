@@ -1,37 +1,23 @@
-const express = require("express");
-const {getAllStudent, deleteStudent, updateStudent, createStudent, getOneStudent} = require("../controllers/studentController")
-
-const router = express.Router();
+const  Express = require ("express");
+const  {  getAllStudent, deleteStudent, updateStudent, createStudent, getOneStudent } = require("../controllers/studentController");
 
 
-/**
- * Get all students
- */
+const router = Express.Router();
+
+//get all students
 router.get("/", getAllStudent);
+ 
 
-
-/**
- * Get one student
- */
+//get one student
 router.get("/:id", getOneStudent);
 
-
-/**
- * Create a student
- */
-
+// create a student
 router.post("/", createStudent);
 
-/**
- * update student info
- */
+//update a student
 router.patch("/:id", updateStudent);
 
-/**
- * delete student
- */
+//delete a student
+router.delete("/:id",deleteStudent);
 
-router.delete("/:id", deleteStudent);
-
-
-module.export = {router};
+module.exports = router;

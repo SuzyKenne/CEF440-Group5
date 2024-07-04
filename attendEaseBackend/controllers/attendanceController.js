@@ -1,14 +1,14 @@
 const mongoose = require ('mongoose')
-const Instructors = require ("../models/instructorModels")
+const Attendances = require ("../models/attendanceModels")
 
 
-//functions to get all instructors in the database
-async function getAllInstructors(req, res, next){
+//functions to get all the attendances in the database
+async function getAllAttendance(req, res, next){
     try {
-        const instructors = await Instructors.find({})
+        const attendances = await Attendances.find({})
 
         return next(
-            res.status(200).json(instructors)
+            res.status(200).json(attendances)
             
         )
     } catch (error) {
@@ -21,8 +21,8 @@ async function getAllInstructors(req, res, next){
 }
 
 
-//function to get one instructor
-async function getOneInstructor(req, res, next){
+//function to get one attendance
+async function getOneAttendance(req, res, next){
     const {id} = req.params ;
 
     if( !mongoose.Types.ObjectId.isValid(id)){
@@ -33,33 +33,33 @@ async function getOneInstructor(req, res, next){
         ) 
     }
 
-    const instructor = await Instructors.findById({_id : id })
+    const attendance = await Attendances.findById({_id : id })
 
-    if(!instructor){
+    if(!attendance){
         return next(
             res.status(404).json({
-                message: "Instructor  Not Found"
+                message: "attendance  Not Found"
             })
         )
     }
 
     return next(
-        res.status(200).json (instructor)
+        res.status(200).json (attendance)
     )
 }
 
 
-//function to create an instructor
-async function createInstructor(req, res, next){
-    const instructorData= req.body;
+//function to create an attendance session
+async function createAttendance(req, res, next){
+    const attendanceData= req.body;
 
     try {
-        const newInstructor = await Instructors.create(instructorData);
+        const newAttendance = await Attendances.create(attendanceData);
 
         return next(
             res.status(200).json({
                 Status :"OK",
-                message : "Instructor succefully added!"
+                message : "Attendance succefully added!"
             })
         
         )
@@ -74,8 +74,8 @@ async function createInstructor(req, res, next){
 }
 
 
-//function to update  an instructor
-async  function updateInstructor(req, res,next){
+//function to update  an attendance
+async  function updateAttendance(req, res,next){
     const {id} = req.params ;
 
     const update = req.body
@@ -88,24 +88,24 @@ async  function updateInstructor(req, res,next){
         ) 
     }
 
-    const instructor = await Instructors.findByIdAndUpdate({_id: id}, {
+    const attendance = await Attendances.findByIdAndUpdate({_id: id}, {
         ...req.body, update
     })
-    if(!instructor){
+    if(!attendance){
         return next(
             res.status(404).json({
-                message: "Instructor Not Found"
+                message: "Attendance Not Found"
             })
         )
     }
 
     return next(
-        res.status(200).json(instructor)
+        res.status(200).json(attendance)
     )
 }  
 
-//function to delete an instructor from database
-async function deleteInstructor(req, res, next){
+//function to delete an attendance from database
+async function deleteAttendance(req, res, next){
     const {id} = req.params ;
 
     if( !mongoose.Types.ObjectId.isValid(id)){
@@ -116,12 +116,12 @@ async function deleteInstructor(req, res, next){
         ) 
     }
 
-    const instructor = await Instructors.findByIdAndDelete({_id: id })
+    const attendance = await Attendances.findByIdAndDelete({_id: id })
 
-if(!instructor){
+if(!department){
         return next(
             res.status(404).json({
-                message: "Instructor Not Found"
+                message: "Attendance Not Found"
             })
         )
     }
@@ -129,11 +129,11 @@ if(!instructor){
     return next(
         res.status(200).json({
             Status :"OK",
-            message : "Instructor succefully deleted!"
+            message : "Attendance succefully deleted!"
         })
        
     )
 }
 
 
-module.exports = { getAllInstructors, getOneInstructor, createInstructor, updateInstructor, deleteInstructor}
+module.exports = { getAllAttendance, getOneAttendance, createAttendance, updateAttendance, deleteAttendance }
