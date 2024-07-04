@@ -20,3 +20,9 @@ export type CardGeneralProps = {
 };
 //     | "person-chalkboard"
 //     | "check-square";
+
+export type CardCoursesProps = {
+  code: string;
+  title: string;
+  checkbox?: boolean;
+};

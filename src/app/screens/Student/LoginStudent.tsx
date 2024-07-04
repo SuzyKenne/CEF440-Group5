@@ -5,7 +5,8 @@ import { ThemedText } from "@/components/ThemedText";
 import CustomButton from "@/components/Atoms/Buttons/CustomButton";
 import { Link, useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
-import Input from "@/components/Atoms/Form/Input";import { useForm, Controller, FieldValues } from "react-hook-form";
+import Input from "@/components/Atoms/Form/Input";
+import { useForm, Controller, FieldValues } from "react-hook-form";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const LoginStudent = ({}) => {
@@ -20,7 +21,7 @@ const LoginStudent = ({}) => {
   const onSubmit = (data: FieldValues) => {
     console.log(data);
     alert("submitted");
-    router.push("../LoginStudent.tsx");
+    router.push("./HomeStudent");
   };
   return (
     <ThemedView style={styles.container}>
@@ -32,18 +33,18 @@ const LoginStudent = ({}) => {
       <ThemedText type="title" style={styles.title}>
         Login
       </ThemedText>
-      
-        <SafeAreaView style={styles.form}>
+
+      <SafeAreaView style={styles.form}>
         <Controller
           control={control}
           name="Matricule"
           render={({ field: { onChange, value } }) => (
             <Input
-            value={value}
-            onChangeText={(val) => onChange(val)}
-                label="Matricule:"
-                placeholder="Enter Matricule"
-              />
+              value={value}
+              onChangeText={(val) => onChange(val)}
+              label="Matricule:"
+              placeholder="Enter Matricule"
+            />
           )}
           rules={{
             required: {
@@ -54,17 +55,17 @@ const LoginStudent = ({}) => {
         />
         <Controller
           control={control}
-          name="Matricule"
+          name="Password"
           render={({ field: { onChange, value } }) => (
             <Input
-            value={value}
-            label="Password:"
-            onChangeText={(val) => onChange(val)}
-                placeholder="Enter Password"
-                secureTextEntry= {true}
-                iconName="eye"
-                size={25}
-              />
+              value={value}
+              label="Password:"
+              onChangeText={(val) => onChange(val)}
+              placeholder="Enter Password"
+              secureTextEntry={true}
+              iconName="eye"
+              size={25}
+            />
           )}
           rules={{
             required: {
@@ -73,20 +74,21 @@ const LoginStudent = ({}) => {
             },
           }}
         />
-      <Link href={"/"} style={styles.pwd}>
+        <Link href={"/"} style={styles.pwd}>
           <ThemedText type="link">Forgot Password?</ThemedText>
         </Link>
         <ThemedView style={styles.button}>
-      <ThemedText type="default" style={styles.signup}>Don't have an acccount? 
-        <ThemedText type="link">
-          <Link href={"./CreateAccountStudent"}> Sign Up</Link>
-        </ThemedText>
-        </ThemedText>
+          <ThemedText type="default" style={styles.signup}>
+            Don't have an acccount?
+            <ThemedText type="link">
+              <Link href={"./CreateAccountStudent"}> Sign Up</Link>
+            </ThemedText>
+          </ThemedText>
           <ThemedView style={{ marginLeft: 40 }}>
             <CustomButton title="Login" onPress={handleSubmit(onSubmit)} />
           </ThemedView>
         </ThemedView>
-        </SafeAreaView>
+      </SafeAreaView>
     </ThemedView>
   );
 };
@@ -100,8 +102,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginLeft: -200,
-    marginTop: 100,
-    color: Colors.colorPrimary, fontSize: 50,
+    color: Colors.colorPrimary,
   },
   form: {
     width: "100%",
@@ -114,11 +115,11 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
   },
   button: {
-    marginTop: "50%",
+    marginTop: "20%",
   },
   signup: {
-    textAlign:"center",
-  }
+    textAlign: "center",
+  },
 });
 
 export default LoginStudent;

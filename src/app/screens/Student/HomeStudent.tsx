@@ -1,47 +1,43 @@
 import { Image, StyleSheet } from "react-native";
 import React from "react";
 import { ThemedView } from "@/components/ThemedView";
+import { ThemedText } from "@/components/ThemedText";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import CardGeneral from "@/components/Atoms/Card/CardGeneral";
 import Card from "@/components/Atoms/Card/CardButton";
+import { ScrollView } from "react-native-gesture-handler";
 import ActionLink from "@/components/ActionLink";
+import BackNavigation from "@/components/BackNavigation";
 import Header from "@/components/Header";
 
-const HomeInstructor = ({}) => {
+const HomeStudent = ({}) => {
   const router = useRouter();
   return (
-    <ThemedView>
+    <ScrollView>
       <Header title="Home" notification={true} />
-      <ThemedView style={styles.container}>
+      <ThemedView style={styles.contain}>
         <CardGeneral
           content="Welcome !"
           title="Hi Aubin SIAHA"
           icon="person-sharp"
         />
-        <ThemedView style={styles.cardContainer}>
-          <ThemedView style={styles.card}>
-            <Card
-              title="Courses"
-              image={"../../../../assets/images/Book.png"}
-              onPress="./Courses"
-            />
-          </ThemedView>
-          <ThemedView style={styles.card}>
-            <Card
-              title="Create a session"
-              image={"../../../../assets/images/person.png"}
-              onPress="./CreateSession"
-            />
-          </ThemedView>
-          <ThemedView style={styles.card}>
-            <Card
-              title="View attendance"
-              image={"../../../../assets/images/attendanceHistorique.png"}
-              onPress="./ViewAttendance"
-            />
-          </ThemedView>
-        </ThemedView>
+        <CardGeneral
+          content="Please mark your attendance"
+          title="Attendance notification"
+          icon="notifications-sharp"
+        />
+        <Card
+          title="Attendace History"
+          image={"../../../../assets/images/attendanceHistorique.png"}
+          onPress="/screens/Welcome"
+        />
+        <Card
+          title="Course Registration"
+          image={"../../../../assets/images/file.png"}
+          onPress="/screens/Welcome"
+        />
       </ThemedView>
       <ThemedView style={styles.footer}>
         <ActionLink
@@ -60,7 +56,7 @@ const HomeInstructor = ({}) => {
           icon="log-out-sharp"
         />
       </ThemedView>
-    </ThemedView>
+    </ScrollView>
   );
 };
 
@@ -86,35 +82,11 @@ const styles = StyleSheet.create({
     marginLeft: "25%",
     cursor: "pointer",
   },
-
-  container: {
-    paddingHorizontal: 20,
-  },
-
-  cardContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    flexWrap: "wrap",
-  },
-  card: {
-    width: "45%",
-    maxWidth: "50%",
-  },
-  cardRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 30,
-  },
-  attendanceCard: {
-    marginTop: 20,
-  },
-
+  contain: {},
   footer: {
-    flexDirection: "column",
-    justifyContent: "space-between",
-    marginVertical: 20,
-    paddingHorizontal: 20,
+    marginBottom: 10,
+    marginTop: 40,
   },
 });
 
-export default HomeInstructor;
+export default HomeStudent;

@@ -20,7 +20,7 @@ const LoginInstructor = () => {
   const onSubmit = (data: FieldValues) => {
     console.log(data);
     alert("submitted");
-    router.push("../LoginInstructor.tsx");
+    router.push("./HomeInstructor");
   };
   return (
     <ThemedView style={styles.container}>
@@ -58,7 +58,7 @@ const LoginInstructor = () => {
           render={({ field: { onChange, value } }) => (
             <Input
               label="Password:"
-              onChangeText={(val) =>  onChange(val)}
+              onChangeText={(val) => onChange(val)}
               value={value}
               placeholder="enter your Password"
               secureTextEntry={true}
@@ -71,10 +71,11 @@ const LoginInstructor = () => {
           <ThemedText type="link">Forgot Password?</ThemedText>
         </Link>
         <ThemedView style={styles.button}>
-        <ThemedText type="default" style={{textAlign: "center"}}>Don't have an account? 
-          <ThemedText type="link">
-            <Link href={"./CreateInstructor"}> Sign Up</Link>
-          </ThemedText>
+          <ThemedText type="default" style={{ textAlign: "center" }}>
+            Don't have an account?
+            <ThemedText type="link">
+              <Link href={"./CreateInstructor"}> Sign Up</Link>
+            </ThemedText>
           </ThemedText>
           <ThemedView style={{ marginLeft: 40 }}>
             <CustomButton title="Login" onPress={handleSubmit(onSubmit)} />

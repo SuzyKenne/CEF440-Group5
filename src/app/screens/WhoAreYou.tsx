@@ -24,7 +24,7 @@ const WhoAreYou = ({}) => {
         />
         <CustomButton
           title="Student"
-          onPress={() => router.push("./student/LoginStudent")}
+          onPress={() => router.push("./Student/LoginStudent")}
         />
       </ThemedView>
     </ThemedView>
