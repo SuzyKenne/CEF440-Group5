@@ -11,33 +11,44 @@ import { ScrollView } from "react-native-gesture-handler";
 import ActionLink from "@/components/ActionLink";
 import BackNavigation from "@/components/BackNavigation";
 import Header from "@/components/Header";
+import { View } from "react-native";
 
 const HomeInstructor = ({}) => {
   const router = useRouter();
   return (
     <ScrollView>
       <Header title="Home" notification={true} />
-      <ThemedView style={styles.contain}>
+      <ThemedView style={styles.container}>
         <CardGeneral
           content="Welcome !"
           title="Hi Aubin SIAHA"
           icon="person-sharp"
         />
-        <Card
-          title="Courses"
-          image={"../../../../assets/images/Book.png"}
-          onPress="/screens/Welcome"
-        />
-        <Card
-          title="Create a session"
-          image={"../../../../assets/images/person.png"}
-          onPress="/screens/Welcome"
-        />
-        <Card
-          title="View attendance"
-          image={"../../../../assets/images/attendanceHistorique.png"}
-          onPress="/screens/Welcome"
-        />
+        <ThemedView style={styles.cardContainer}>
+          <ThemedView style={styles.card}>
+            <Card
+              title="Courses"
+              image={"../../../../assets/images/Book.png"}
+              onPress="/screens/Welcome"
+            />
+          </ThemedView>
+
+          <ThemedView style={styles.card}>
+            <Card
+              title="Create a session"
+              image={"../../../../assets/images/person.png"}
+              onPress="/screens/Welcome"
+            />
+          </ThemedView>
+
+          <ThemedView style={styles.card}>
+            <Card
+              title="View attendance"
+              image={"../../../../assets/images/attendanceHistorique.png"}
+              onPress="/screens/Welcome"
+            />
+          </ThemedView>
+        </ThemedView>
       </ThemedView>
       <ThemedView style={styles.footer}>
         <ActionLink
@@ -82,10 +93,34 @@ const styles = StyleSheet.create({
     marginLeft: "25%",
     cursor: "pointer",
   },
-  contain: {},
+
+  container: {
+    paddingHorizontal: 20,
+  },
+
+  cardContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+  },
+  card: {
+    width: "45%",
+    maxWidth: "50%",
+  },
+  cardRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 30,
+  },
+  attendanceCard: {
+    marginTop: 20,
+  },
+
   footer: {
-    marginBottom: 10,
-    marginTop: 40,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    marginVertical: 20,
+    paddingHorizontal: 20,
   },
 });
 

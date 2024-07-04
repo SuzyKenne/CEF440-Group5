@@ -27,8 +27,8 @@ const Card: React.FC<CardProps> = ({ title, image, onPress }) => {
 const styles = StyleSheet.create({
   card: {
     marginTop: 16,
-    width: "40%",
-    maxWidth: "50%",
+    width: "100%",
+    // maxWidth: "50%",
     paddingHorizontal: 1,
     paddingVertical: 15,
     borderRadius: 20,
