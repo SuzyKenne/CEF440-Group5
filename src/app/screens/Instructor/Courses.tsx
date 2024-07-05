@@ -27,7 +27,7 @@ const Courses = () => {
       <ThemedView style={styles.btn}>
         <CustomButton
           title={"Course Registration"}
-          onPress={() => router.push("./")}
+          onPress={() => router.push("./CoursesRegistration")}
         />
       </ThemedView>
     </ThemedView>
