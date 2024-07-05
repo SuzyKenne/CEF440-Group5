@@ -36,6 +36,20 @@ export const department = [
   { label: "civil eng", value: "civil" },
 ];
 
+export const courses = [
+  { label: "Select", value: "0" },
+  { label: "Cloud computing and SOA", value: "CEF450" },
+  { label: "FeedBack system Lab", value: "EEF460" },
+  { label: "XML and doc. Cont.", value: "CEF482" },
+  { label: "Software Verification and Validation techniques", value: "CEF474" },
+  { label: "Advanced database and admin (Oracle ans MySQL)", value: "CEF438" },
+  { label: "Human computer interface", value: "CEF472" },
+  { label: "Internet Programing and Network", value: "CEF440" },
+  { label: "Digital image processing", value: "CEF462" },
+  { label: "Software Engineering and Design", value: "CEF476" },
+  { label: "AI and Machine Learning", value: "CEF444" },
+];
+
 export const demoPersons = [
   {
     id: 1,
