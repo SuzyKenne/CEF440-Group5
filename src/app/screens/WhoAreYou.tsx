@@ -10,7 +10,7 @@ const WhoAreYou = ({}) => {
   return (
     <ThemedView style={styles.container}>
       <Image
-        source={require("../../../assets/images/whoareyou.svg")}
+        source={require("../../../assets/images/whoareyou.png")}
         style={{ width: 300, height: 300 }}
         resizeMode="contain"
       />
