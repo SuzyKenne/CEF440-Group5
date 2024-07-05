@@ -1,5 +1,3 @@
-import { IUserState } from "../actions/userSlice";
-
 export const academicYearOptions = [
   { label: "select", value: "" },
   { label: "2019/2020", value: "2019/2020" },
@@ -13,25 +11,31 @@ export const academicYearOptions = [
   { label: "2027/2028", value: "2027/2028" },
 ];
 
-export const studentClassOptions = [
-  { label: "Select", value: 0 },
-  { label: "Level 200", value: 200 },
-  { label: "Level 300", value: 300 },
-  { label: "Level 400", value: 400 },
-  { label: "Level 500", value: 500 },
-  { label: "Master 1", value: 600 },
-  { label: "Master 2", value: 700 },
+export const level = [
+  { label: "Select", value: "0" },
+  { label: "Level 200", value: "200" },
+  { label: "Level 300", value: "300" },
+  { label: "Level 400", value: "400" },
+  { label: "Level 500", value: "500" },
+  { label: "Master 1", value: "600" },
+  { label: "Master 2", value: "700" },
 ];
 
-export const demoUser: IUserState = {
-  user: {
-    _id: "123",
-    fullname: "John Doe",
-    email: "john.doe@example.com",
-    userId: 1,
-    role: "admin",
-  },
-};
+export const faculty = [
+  { label: "Select", value: "0" },
+  { label: "FET", value: "fet" },
+  { label: "ASTII", value: "astii" },
+  { label: "COT", value: "cot" },
+  { label: "Agriculture", value: "ag" },
+];
+export const department = [
+  { label: "Select", value: "0" },
+  { label: "Computer eng", value: "comp" },
+  { label: "Electrical", value: "elec" },
+  { label: "Mechanical", value: "mecha" },
+  { label: "civil eng", value: "civil" },
+];
+
 export const demoPersons = [
   {
     id: 1,

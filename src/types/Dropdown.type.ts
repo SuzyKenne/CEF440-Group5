@@ -1,15 +1,13 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent } from "react";
 
-export type DropdownProps = {
-  DropdownIcon?: React.ReactNode;
-  // onclick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  options: DropdownOptions[];
-  selectedValue?: string | number;
-  onchange: (e: ChangeEvent<HTMLSelectElement>) => void;
-  title: string;
-};
-
-export type DropdownOptions = {
-  value: string | number;
+export type DropdownOption = {
   label: string;
+  value: string | number;
+};
+export type DropdownProps = {
+  label: string;
+  options: DropdownOption[];
+  value: string;
+  onValueChange: (newValue: string) => void;
+  style?: any;
 };
