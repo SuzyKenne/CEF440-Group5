@@ -147,7 +147,7 @@ const Teacher = () => {
             </thead>
             <tbody>
               {teachers.map((teacher, index) => (
-                <tr>
+                <tr key={index}>
                   <td>{teacher.NameTeachers}</td>
                   <td>{teacher.IdTeachers}</td>
                   <td>{teacher.facultyTeacher}</td>

@@ -24,7 +24,7 @@ const Sidebar = () => {
       navigateTo: "/teacher",
     },
     {
-      name: "Add Lecturers",
+      name: "Add Students",
       icon: <FaUserGraduate />,
       navigateTo: "/students",
     },
