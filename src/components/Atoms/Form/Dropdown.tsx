@@ -42,10 +42,12 @@ const Dropdown: FC<DropdownProps> = ({
         style={styles.dropdown}
         onPress={() => setIsModalVisible(true)}
       >
-        {/* <ThemedText type="default" style={styles.label}>{label}</ThemedText> */}
+        {/* <ThemedText type="default" style={styles.label}>
+          {label}
+        </ThemedText> */}
         <ThemedView style={styles.selectedOptionContainer}>
           <ThemedText style={styles.selectedOptionText}>
-            {selectedOption?.label || "Select an option"}
+            {selectedOption?.label || `${label}`}
           </ThemedText>
           <FontAwesome name="angle-down" size={20} color="#999" />
         </ThemedView>
