@@ -30,14 +30,14 @@ const HomeStudent = ({}) => {
             <Card
               title="Attendace History"
               image={"../../../../assets/images/attendanceHistorique.png"}
-              onPress="/screens/Welcome"
+              onPress="./ViewAttendance"
             />
           </ThemedView>
           <ThemedView style={styles.card}>
             <Card
               title="Course Registration"
               image={"../../../../assets/images/file.png"}
-              onPress="/screens/Welcome"
+              onPress="./CourseRegistration"
             />
           </ThemedView>
         </ThemedView>
