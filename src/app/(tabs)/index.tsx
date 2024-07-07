@@ -31,45 +31,7 @@ export default function HomeScreen() {
         activeOpacity={0.8}
         loading={false}
       />
-      <CustomButton
-        onPress={() => {
-          console.log("clicked disabled button");
-        }}
-        title="Button2"
-        style={styles.customButton}
-        textStyle={styles.customButtonText}
-        disabled={true}
-        activeOpacity={0.8}
-        loading={false}
-      />
-      <ThemedView style={styles.container}>
-        <Card title="Create a session" image={Img} onPress="/screens/Welcome" />
-        <Card title="View attendance" image={Img} onPress="/screens/Welcome" />
-      </ThemedView>
-      <CardGeneral
-        content="Please mark your attendance"
-        title="Attendance notification"
-        icon="notifications-sharp"
-      />
-      <CardGeneral
-        content="Total of presence"
-        title="Mathematics"
-        time="10:34 am"
-        letter="M"
-        nberPresence="18/20"
-      />
-      <CardGeneral
-        content="Total of presence"
-        title="Digital Image"
-        time="10:34 am"
-        letter="D"
-        status="present"
-      />
-      <CardGeneral
-        content="Welcome !"
-        title="Hi Aubin SIAHA"
-        icon="person-sharp"
-      />
+
       {/* </ParallaxScrollView> */}
     </ThemedView>
   );

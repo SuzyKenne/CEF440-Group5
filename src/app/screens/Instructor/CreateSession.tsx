@@ -65,7 +65,7 @@ const CreateSession = () => {
       <ThemedView style={styles.btn}>
         <CustomButton
           title={"Create the session"}
-          onPress={() => router.push("./CoursesRegistration")}
+          onPress={() => router.push("./Scan")}
         />
       </ThemedView>
     </ThemedView>
