@@ -1,139 +1,164 @@
-const mongoose = require ('mongoose')
-const Instructors = require ("../models/instructorModels")
+// controllers/instructorController.js
+const jwt = require('jsonwebtoken');
+const Instructors = require('../models/instructorModels');
 
+// Register Instructor
+async function registerInstructor(req, res) {
+  const { instructorId, instructorName, email, password } = req.body;
 
-//functions to get all instructors in the database
-async function getAllInstructors(req, res, next){
-    try {
-        const instructors = await Instructors.find({})
+  if (!instructorId || !instructorName || !email || !password) {
+    return res.status(400).json({
+      message: "All fields are required: instructorId, instructorName, email, and password"
+    });
+  }
 
-        return next(
-            res.status(200).json(instructors)
-            
-        )
-    } catch (error) {
-        return next(
-            res.status(400).json({
-                message: error
-            })
-        )
+  try {
+    const newInstructor = await Instructors.create({ instructorId, instructorName, email, password });
+
+    return res.status(201).json({
+      status: "OK",
+      message: "Instructor successfully registered!",
+      instructor: newInstructor
+    });
+  } catch (error) {
+    console.error(error);
+    if (error.code === 11000) {
+      return res.status(400).json({
+        message: "Email or Instructor ID already exists"
+      });
     }
+    return res.status(500).json({
+      message: "An error occurred while registering the instructor"
+    });
+  }
 }
 
+// Login Instructor
+async function loginInstructor(req, res) {
+  const { email, password } = req.body;
 
-//function to get one instructor
-async function getOneInstructor(req, res, next){
-    const {id} = req.params ;
+  if (!email || !password) {
+    return res.status(400).json({
+      message: "All fields are required: email and password"
+    });
+  }
 
-    if( !mongoose.Types.ObjectId.isValid(id)){
-        return next(
-            res.status(404).json({
-                message: "Invalid id!"
-            })
-        ) 
+  try {
+    const instructor = await Instructors.findOne({ email });
+    if (!instructor) {
+      return res.status(400).json({
+        message: "Invalid email or password"
+      });
     }
 
-    const instructor = await Instructors.findById({_id : id })
-
-    if(!instructor){
-        return next(
-            res.status(404).json({
-                message: "Instructor  Not Found"
-            })
-        )
+    const isMatch = await instructor.comparePassword(password);
+    if (!isMatch) {
+      return res.status(400).json({
+        message: "Invalid email or password"
+      });
     }
 
-    return next(
-        res.status(200).json (instructor)
-    )
+    const token = jwt.sign({ id: instructor._id }, 'your_jwt_secret', { expiresIn: '1h' });
+
+    return res.status(200).json({
+      status: "OK",
+      message: "Instructor successfully logged in!",
+      token
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "An error occurred while logging in the instructor"
+    });
+  }
 }
 
-
-//function to create an instructor
-async function createInstructor(req, res, next){
-    const instructorData= req.body;
-
-    try {
-        const newInstructor = await Instructors.create(instructorData);
-
-        return next(
-            res.status(200).json({
-                Status :"OK",
-                message : "Instructor succefully added!"
-            })
-        
-        )
-    } catch (error) {
-        return next(
-            res.status(400).json({
-                message: error
-            })
-        )
-    }
-    
+// Get all instructors
+async function getAllInstructors(req, res) {
+  try {
+    const instructors = await Instructors.find();
+    return res.status(200).json(instructors);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "An error occurred while fetching instructors"
+    });
+  }
 }
 
+// Get instructor by ID
+async function getInstructorById(req, res) {
+  const { id } = req.params;
 
-//function to update  an instructor
-async  function updateInstructor(req, res,next){
-    const {id} = req.params ;
-
-    const update = req.body
-
-    if( !mongoose.Types.ObjectId.isValid(id)){
-        return next(
-            res.status(404).json({
-                message: "Invalid id!"
-            })
-        ) 
+  try {
+    const instructor = await Instructors.findById(id);
+    if (!instructor) {
+      return res.status(404).json({
+        message: "Instructor not found"
+      });
     }
-
-    const instructor = await Instructors.findByIdAndUpdate({_id: id}, {
-        ...req.body, update
-    })
-    if(!instructor){
-        return next(
-            res.status(404).json({
-                message: "Instructor Not Found"
-            })
-        )
-    }
-
-    return next(
-        res.status(200).json(instructor)
-    )
-}  
-
-//function to delete an instructor from database
-async function deleteInstructor(req, res, next){
-    const {id} = req.params ;
-
-    if( !mongoose.Types.ObjectId.isValid(id)){
-        return next(
-            res.status(404).json({
-                message: "Invalid id!"
-            })
-        ) 
-    }
-
-    const instructor = await Instructors.findByIdAndDelete({_id: id })
-
-if(!instructor){
-        return next(
-            res.status(404).json({
-                message: "Instructor Not Found"
-            })
-        )
-    }
-
-    return next(
-        res.status(200).json({
-            Status :"OK",
-            message : "Instructor succefully deleted!"
-        })
-       
-    )
+    return res.status(200).json(instructor);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "An error occurred while fetching the instructor"
+    });
+  }
 }
 
+// Update instructor
+async function updateInstructor(req, res) {
+  const { id } = req.params;
+  const updates = req.body;
 
-module.exports = { getAllInstructors, getOneInstructor, createInstructor, updateInstructor, deleteInstructor}
+  try {
+    const instructor = await Instructors.findByIdAndUpdate(id, updates, { new: true, runValidators: true });
+    if (!instructor) {
+      return res.status(404).json({
+        message: "Instructor not found"
+      });
+    }
+    return res.status(200).json({
+      status: "OK",
+      message: "Instructor successfully updated!",
+      instructor
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "An error occurred while updating the instructor"
+    });
+  }
+}
+
+// Delete instructor
+async function deleteInstructor(req, res) {
+  const { id } = req.params;
+
+  try {
+    const instructor = await Instructors.findByIdAndDelete(id);
+    if (!instructor) {
+      return res.status(404).json({
+        message: "Instructor not found"
+      });
+    }
+    return res.status(200).json({
+      status: "OK",
+      message: "Instructor successfully deleted!"
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "An error occurred while deleting the instructor"
+    });
+  }
+}
+
+module.exports = {
+  registerInstructor,
+  loginInstructor,
+  getAllInstructors,
+  getInstructorById,
+  updateInstructor,
+  deleteInstructor
+};

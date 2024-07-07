@@ -10,7 +10,6 @@ const instructorRoute = require("./routes/instructorRoute");
 const attendanceRoute = require("./routes/attendanceRoute");
 const facultyRoute = require("./routes/facultyRoute");
 const departmentRoute = require("./routes/departmentRoute");
-const biometricDataRoute = require("./routes/biometricDataRoute");
 const levelRoute = require("./routes/levelRoute");
 const courseRoute = require("./routes/courseRoute");
 const adminRoute = require("./routes/adminRoute");
@@ -36,7 +35,6 @@ app.use("/faculties", facultyRoute);
 app.use("/attendances", attendanceRoute);
 app.use("/levels", levelRoute);
 app.use("/departments", departmentRoute);
-app.use("/biometricDatas", biometricDataRoute);
 app.use("/administrators", adminRoute);
 
 app.use("/", (req, res) => {
@@ -51,7 +49,6 @@ console.log('instructorRoute:', typeof instructorRoute);
 console.log('attendanceRoute:', typeof attendanceRoute);
 console.log('facultyRoute:', typeof facultyRoute);
 console.log('departmentRoute:', typeof departmentRoute);
-console.log('biometricRoute:', typeof biometricDataRoute);
 console.log('levelRoute:', typeof levelRoute);
 console.log('courseRoute:', typeof courseRoute);
 console.log('adminRoute:', typeof adminRoute);

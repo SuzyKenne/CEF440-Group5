@@ -1,4 +1,5 @@
 const mongoose = require ('mongoose');
+const bcryptjs = require ('bcryptjs');
 
 
 const StudentSchema = new mongoose.Schema ({
@@ -24,17 +25,29 @@ const StudentSchema = new mongoose.Schema ({
         type:String,
         required: true
     },
-    departement: {
+    department: {
         type: String,
         required: true
-    },
-    biometricData: {
-        type: String,
-        required: [true, "BiometricData required"],
-        unique: [true, "Biometric data must  be unique!"]
-    },
-
+    }
 }, {timestamps: true});
 
-const Students = mongoose.model('Student', StudentSchema);
-module.exports = {Students}
+
+// Hash password before saving the student
+StudentSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+    try {
+      const salt = await bcryptjs.genSalt(10);
+      this.password = await bcryptjs.hash(this.password, salt);
+      return next();
+    } catch (err) {
+      return next(err);
+    }
+  });
+  
+  // Compare password method for login
+  StudentSchema.methods.comparePassword = async function (candidatePassword) {
+    return bcryptjs.compare(candidatePassword, this.password);
+  };
+  
+const Students = mongoose.model('Students', StudentSchema);
+module.exports = Students

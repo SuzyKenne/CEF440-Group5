@@ -1,8 +1,9 @@
 const mongoose = require ('mongoose');
+const bcryptjs = require ('bcryptjs');
 
 
 const InstructorSchema = new mongoose.Schema ({
-    instructorMatricule: {
+    instructorId: {
         type: String,
         required: [true, "Matricule required!"],
         unique: [true, "Matricule be unique"]
@@ -23,6 +24,23 @@ const InstructorSchema = new mongoose.Schema ({
     }
 }, {timestamps: true});
 
+// Hash password before saving the instructor
+InstructorSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+    try {
+      const salt = await bcryptjs.genSalt(10);
+      this.password = await bcryptjs.hash(this.password, salt);
+      return next();
+    } catch (err) {
+      return next(err);
+    }
+  });
+  
+  // Compare password method for login
+  InstructorSchema.methods.comparePassword = async function (candidatePassword) {
+    return bcryptjs.compare(candidatePassword, this.password);
+  };
 
-const Instructors = mongoose.model("Instructor", InstructorSchema);
-module.exports = {Instructors};
+
+const Instructors = mongoose.model("Instructors", InstructorSchema);
+module.exports = Instructors;
