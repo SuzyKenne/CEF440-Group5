@@ -1,0 +1,17 @@
+.searchbar {
+  padding: 10px;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #e0e0e0;
+}
+.loopicon {
+  position: absolute;
+  left: 320px;
+  top: 145px;
+}
+.searchgroup {
+  margin-top: 40px;
+}
