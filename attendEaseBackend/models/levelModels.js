@@ -1,12 +1,13 @@
 const mongoose = require ('mongoose');
 
 
-const LevelSchema = new mongoose.Schema ({
+const levelSchema = new mongoose.Schema ({
     levelName: {
         type: String,
-        required: [true, "Level name required!"]
+        required: [true, "Level name required!"],
+        unique: [true, "the level name should be unique"]
     }
     
 }, {timestamps: true});
-const Levels = mongoose.model("Level", LevelSchema);
-module.exports = {Levels};
+const Levels = mongoose.model("Levels", levelSchema);
+module.exports = Levels;

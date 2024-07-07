@@ -5,7 +5,7 @@ const  { getAllCourses, getOneCourse, createCourse, updateCourse, deleteCourse} 
 const router = Express.Router();
 
 //get all Courses
-router.get("/",getAllCourses);
+router.get("/", getAllCourses);
 
 
 //get one Course

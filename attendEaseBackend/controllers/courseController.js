@@ -64,6 +64,7 @@ async function createCourse(req, res, next){
         
         )
     } catch (error) {
+        console.log(error)
         return next(
             res.status(400).json({
                 message: error

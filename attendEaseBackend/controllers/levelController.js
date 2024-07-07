@@ -64,9 +64,10 @@ async function createLevel(req, res, next){
         
         )
     } catch (error) {
+        console.log(error)
         return next(
             res.status(400).json({
-                message: error
+                message: "level wasn't added!"
             })
         )
     }

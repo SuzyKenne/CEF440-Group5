@@ -1,13 +1,19 @@
 const mongoose = require ('mongoose');
 
 
-const DepartmentSchema = new mongoose.Schema ({
+const departmentSchema = new mongoose.Schema ({
     departmentName: {
         type: String,
         required: [true, "Department name required!"]
     },
-    
-    
+    departmentAbrev: {
+        type: String,
+        required:true
+    },
+    facultyAbrev: {
+        type: String,
+        required: true
+    }
 }, {timestamps: true});
-const Departments = mongoose.model("Department", DepartmentSchema);
-module.exports = {Departments}
+const Departments = mongoose.model("Department", departmentSchema);
+module.exports = Departments
