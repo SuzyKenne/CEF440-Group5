@@ -35,7 +35,7 @@ const CoursesRegistration = () => {
         </ThemedView>
         <ThemedView style={{ maxWidth: "100%", width: "45%" }}>
           <Dropdown
-            label="Select department"
+            label="Department"
             options={department}
             value={selectDepartment}
             onValueChange={setselectDepartment}
@@ -44,7 +44,7 @@ const CoursesRegistration = () => {
         </ThemedView>
         <ThemedView style={{ maxWidth: "100%", width: "45%" }}>
           <Dropdown
-            label="Select level"
+            label="Level"
             options={level}
             value={selectLevel}
             onValueChange={setselectLevel}

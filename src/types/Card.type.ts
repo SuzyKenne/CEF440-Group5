@@ -8,7 +8,7 @@ export type CardProps = {
 };
 export type CardGeneralProps = {
   title: string;
-  content: string;
+  content: string | number;
   image?: string;
   icon?: "notifications-sharp" | "person-sharp" | "book-sharp";
   time?: string;
