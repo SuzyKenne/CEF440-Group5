@@ -1,0 +1,36 @@
+.sidebarComponent {
+  height: 100vh;
+  width: 240px;
+  background-color: var(--primary-color);
+}
+.sidebarComponent ul {
+  color: white;
+  list-style-type: none;
+  padding: 0;
+  padding: 10px 20px;
+}
+.logo {
+  background-color: white;
+  padding: 40px;
+}
+.logo img {
+  width: 100%;
+}
+.sidebarComponent ul li {
+  margin: 20px 0;
+  padding: 10px 0px;
+  padding-left: 20px;
+
+  border-radius: 5px;
+  display: flex;
+  gap: 25px;
+
+  align-items: center;
+  cursor: pointer;
+}
+.sidebarComponent ul li:hover {
+  background-color: #2b4fa2;
+}
+.selected {
+  background-color: #2b4fa2; /* Change to desired selected background color */
+}

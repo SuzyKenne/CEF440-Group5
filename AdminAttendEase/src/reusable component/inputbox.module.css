@@ -1,0 +1,14 @@
+.inputPage input {
+  width: 97%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+.inputPage label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+}
+.inputPage {
+  margin-bottom: 20px;
+}
