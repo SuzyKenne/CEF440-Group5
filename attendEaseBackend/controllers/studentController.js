@@ -35,19 +35,19 @@ async function registerStudent(req, res) {
 
 // Login Student
 async function loginStudent(req, res) {
-  const { email, password } = req.body;
+  const { matricule, password } = req.body;
 
-  if (!email || !password) {
+  if (!matricule || !password) {
     return res.status(400).json({
-      message: "All fields are required: email and password"
+      message: "All fields are required: matrile and password"
     });
   }
 
   try {
-    const student = await Students.findOne({ email });
+    const student = await Students.findOne( {matricule} );
     if (!student) {
       return res.status(400).json({
-        message: "Invalid email or password"
+        message: "Invalid matricule or password"
       });
     }
 
@@ -58,7 +58,7 @@ async function loginStudent(req, res) {
       });
     }
 
-    const token = jwt.sign({ id: student._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    token = jwt.sign({ id: student._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
     return res.status(200).json({
       status: "OK",
@@ -91,7 +91,7 @@ async function getStudentById(req, res) {
   const { id } = req.params;
 
   try {
-    const student = await Students.findById(id);
+    const student = await Students.findById({_id : id});
     if (!student) {
       return res.status(404).json({
         message: "Student not found"
@@ -112,7 +112,7 @@ async function updateStudent(req, res) {
   const updates = req.body;
 
   try {
-    const student = await Students.findByIdAndUpdate(id, updates, { new: true, runValidators: true });
+    const student = await Students.findByIdAndUpdate({_id: id}, updates, { new: true, runValidators: true });
     if (!student) {
       return res.status(404).json({
         message: "Student not found"
@@ -136,7 +136,7 @@ async function deleteStudent(req, res) {
   const { id } = req.params;
 
   try {
-    const student = await Students.findByIdAndDelete(id);
+    const student = await Students.findByIdAndDelete({_id: id});
     if (!student) {
       return res.status(404).json({
         message: "Student not found"

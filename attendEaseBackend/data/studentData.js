@@ -1,47 +1,47 @@
 const STUDENT = [
     {
-        "matricule": "FE21A193",
-        "studentName": "FONGANG KELUAM PAUL DIEUDONNE",
-        "email": "fongangpaul@gmail.com",
+        "matricule": "FE23A151",
+        "studentName": "BOBUALA HARRISON DIMA",
+        "email": "bobualaharrison@gmail.com",
         "password": "12345678",
         "faculty": "FET",
-        "department": "ELECTRICAL ENGINEERING",
-        "studentLevel": "Level 400",
+        "department": "Computer ENGINEERING",
+        "studentLevel": "Level 200"
     },
     {
-        "matricule": "FE21A300",
-        "studentName": "QUINUEL TABOT NDIP-AGBOR",
-        "email": "quinneltabot@gmail.com",
+        "matricule": "FE23A208",
+        "studentName": "KAMCHE YANN ARNAUD",
+        "email": "kamcheyann@gmail.com",
         "password": "12345678",
         "faculty": "FET",
-        "department": "ELECTRICAL ENGINEERING",
-        "studentLevel": "Level 400",
+        "department": "Computer ENGINEERING",
+        "studentLevel": "Level 200"
     },
     {
-        "matricule": "FE21A306",
-        "studentName": "SIRRI THERESIA ANYE",
-        "email": "sirritheresia@gmail.com",
+        "matricule": "FE23A236",
+        "studentName": "MESSI II INNOCENT ROSTAND",
+        "email": "messiinnocent@gmail.com",
         "password": "12345678",
         "faculty": "FET",
-        "department": "ELECTRICAL ENGINEERING",
-        "studentLevel": "Level 400",  
+        "department": "Computer ENGINEERING",
+        "studentLevel": "Level 200" 
     },
     {
-        "matricule": "FE21A157",
-        "studentName": "CHE BLAISE NJI",
-        "email": "cheblaise@gmail.com",
+        "matricule": "FE23A290",
+        "studentName": "NYANDO ONONGWENE",
+        "email": "nyandoonongweneg@gmail.com",
         "password": "12345678",
         "faculty": "FET",
-        "department": "ELECTRICAL ENGINEERING",
-        "studentLevel": "Level 400",  
+        "department": "Computer ENGINEERING",
+        "studentLevel": "Level 200"
     },
     {
-        "matricule": "FE21A260",
-        "studentName": "NGONCHI RAMATOU YOLAND",
-        "email": "ngonchiramatou@gmail.com",
+        "matricule": "FE23A281",
+        "studentName": "NKWI CYRIL AKINIMBOM",
+        "email": "nkwicyril@gmail.com",
         "password": "12345678",
         "faculty": "FET",
-        "department": "ELECTRICAL ENGINEERING",
-        "studentLevel": "Level 400",
+        "department": "Computer ENGINEERING",
+        "studentLevel": "Level 200"
     }
 ]

@@ -23,8 +23,9 @@ app.use((req, res, next) => {
     next();
 });
 app.use(cors({
-    origin: ["http://127.0.0.1:3000", "http://127.0.0.1:8081"],
-    methods: ["GET", "POST", "DELETE", "PATCH"]
+    origin:  "http://127.0.0.1:8081",
+    methods: ["GET", "POST", "DELETE", "PATCH"],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // Defining routes
