@@ -23,7 +23,9 @@ const navbar = ({ buttonValue, onButtonClick }) => {
           <IoIosNotifications />
           <p>
             {" "}
-            <Link to="/">Log out</Link>{" "}
+            <Link to="/" className={styles.Logout}>
+              Log out
+            </Link>{" "}
           </p>
         </div>
       </div>

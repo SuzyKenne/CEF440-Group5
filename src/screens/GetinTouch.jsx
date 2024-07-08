@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Infoform = () => {
+const GetinTouch = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Infoform = () => {
   )
 }
 
-export default Infoform
+export default GetinTouch

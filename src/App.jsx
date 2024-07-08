@@ -10,6 +10,10 @@ import Profile from "./screens/Profile";
 import Privacy from "./screens/Privacy";
 import Help from "./screens/Help";
 import Navbar from "./reusable component/Navbar";
+import Homes from "./screens/Homes";
+import Features from "./screens/Features";
+import About from "./screens/About";
+import GetinTouch from "./screens/GetinTouch";
 
 const App = () => {
   return (
@@ -23,6 +27,10 @@ const App = () => {
       <Route path="/profile" element={<Profile />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/help" element={<Help />} />
+      <Route path="/home" element={<Homes />} />
+      <Route path="/features" element={<Features />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/getintouch" element={<GetinTouch />} />
     </Routes>
   );
 };

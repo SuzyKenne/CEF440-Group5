@@ -4,6 +4,9 @@
 .secondContainer {
   padding: 40px 60px;
 }
+.secondContainer ul li {
+  text-decoration: none;
+}
 .overlay {
   position: fixed;
   top: 0;

@@ -1,0 +1,51 @@
+.hearder ul {
+  list-style-type: none;
+  display: flex;
+  gap: 29px;
+}
+.hearder {
+  display: flex;
+  justify-content: space-between;
+}
+.hearder img {
+  width: 13%;
+}
+.Homes {
+  padding: 30px 70px 0 70px;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  z-index: 1;
+  padding: 0 60px;
+}
+.dowloadImg {
+  width: 70%;
+}
+.phoneImg {
+  width: 40%;
+}
+.vectorImg {
+  width: 100%;
+  position: relative;
+  bottom: 280px;
+  z-index: -1;
+}
+.welcome {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+p {
+  font-size: 1rem;
+}
+.itemNav {
+  text-decoration: none;
+  color: rgb(87, 86, 86);
+}
+.itemNav:hover {
+  text-decoration: underline;
+  color: black;
+}

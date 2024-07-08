@@ -1,0 +1,27 @@
+.Dashboard {
+  display: flex;
+  gap: 40px;
+}
+.log {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  float: right;
+}
+.Logout {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.second {
+  width: 80%;
+  padding: 40px 80px;
+}
+.welcome {
+  margin-top: 100px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}

@@ -10,7 +10,7 @@ const Login = () => {
     navigate("/dashboard");
   }
 
-  const [input, setInput] = useState({ AdminName: "", password: "" });
+  const [input, setInput] = useState({ Email: "", password: "" });
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
@@ -27,12 +27,12 @@ const Login = () => {
         <h1>Login</h1>
         <form onSubmit={handleOnSubmit} className="form">
           <Inputbox
-            id="AdminName"
-            type="text"
-            name="AdminName"
-            value={input.AdminName}
-            label="Name"
-            placeholder="Enter Admin Name"
+            id="Email"
+            type="emil"
+            name="Email"
+            value={input.Email}
+            label="Email"
+            placeholder="Enter email"
             onChange={handleOnChange}
             visibility="true"
           />
