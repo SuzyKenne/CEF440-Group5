@@ -1,0 +1,6 @@
+.About {
+  display: flex;
+}
+.About img {
+  width: 30%;
+}
