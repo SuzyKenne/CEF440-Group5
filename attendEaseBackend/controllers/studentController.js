@@ -44,7 +44,7 @@ async function loginStudent(req, res) {
   }
 
   try {
-    const student = await Students.findOne( {matricule} );
+    const student = await Students.findOne({matricule} );
     if (!student) {
       return res.status(400).json({
         message: "Invalid matricule or password"
@@ -87,11 +87,12 @@ async function getAllStudents(req, res) {
 }
 
 // Get student by ID
-async function getStudentById(req, res) {
-  const { id } = req.params;
+async function getStudentByMatricule(req, res) {
+  //const { id } = req.params;
 
   try {
-    const student = await Students.findById({_id : id});
+    
+    const student = await Students.findOne({matricule});
     if (!student) {
       return res.status(404).json({
         message: "Student not found"
@@ -158,7 +159,7 @@ module.exports = {
   registerStudent,
   loginStudent,
   getAllStudents,
-  getStudentById,
+  getStudentByMatricule,
   updateStudent,
   deleteStudent
 };

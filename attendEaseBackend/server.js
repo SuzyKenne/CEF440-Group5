@@ -23,7 +23,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use(cors({
-    origin:  "http://127.0.0.1:8081",
+    APP_URL: "http://localhost:3000",
     methods: ["GET", "POST", "DELETE", "PATCH"],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
